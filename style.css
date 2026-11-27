@@ -85,15 +85,21 @@ nav .pill{min-height:42px;padding:10px 22px}
 .split{background:radial-gradient(ellipse at 15% 30%,#fffaf0,transparent 55%),linear-gradient(120deg,#e7d4bb,#f5e9d9)}
 .split>img{width:100%;aspect-ratio:4/4.7;max-height:550px;object-fit:cover;object-position:center 30%;border-radius:48% 48% 14px 14px;box-shadow:var(--shadow);outline:1px solid #bf895666;outline-offset:6px}
 
-/* Clinic */
-#espaco{background:radial-gradient(ellipse at 95% 55%,#e7d4bb99,transparent 55%),var(--cream)}
-.space-address{margin-top:24px;padding-top:20px;border-top:1px solid #bf895677}
-.space-address h3{font-size:25px}
+/* Clinic: editorial photographic composition */
+#espaco{background:radial-gradient(ellipse at 86% 60%,#e7d4bb88,transparent 60%),var(--cream)}
+#espaco .space-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,78px);align-items:center}
+.space-copy h2{max-width:11em}
+.space-copy>p:not(.eyebrow){max-width:46ch}
+.space-address{margin-top:28px;padding-top:20px;border-top:1px solid #bf895677}
+.space-address h3{font-size:25px;margin-bottom:8px}
 .space-address p+p{margin-top:8px}
-.space-photos{display:grid;grid-template-columns:1.12fr .88fr;gap:15px;align-items:center;padding:8px 0 30px}
-.space-photos img{width:100%;aspect-ratio:3/4.1;object-fit:cover;object-position:center 65%;border-radius:64px 12px 64px 12px;box-shadow:var(--shadow);transition:translate .3s,box-shadow .3s}
-.space-photos img+img{aspect-ratio:3/4.6;transform:translateY(23px);border-radius:48% 48% 12px 12px}
-.space-photos:has(img[hidden]){grid-template-columns:1fr}
+.space-photos{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto;align-items:start;padding:18px 0 18px 12px}
+.space-photos::before{content:"";position:absolute;z-index:-1;inset:2% 8% 14% 0;border:1px solid #bf895688;border-radius:110px 20px 80px 20px;pointer-events:none}
+.space-photos img{display:block;width:100%;min-width:0;object-fit:cover;object-position:center 73%;border:5px solid var(--paper);border-radius:85px 16px 55px 16px;box-shadow:0 18px 40px #38231c2b;transition:translate .3s,box-shadow .3s}
+.space-photos img:first-child{grid-area:1/1/2/10;aspect-ratio:4/4.5;z-index:1}
+.space-photos img+img{grid-area:1/7/2/13;aspect-ratio:4/4.8;margin-top:34%;z-index:2;border-radius:50px 12px 38px 12px;object-position:center 78%;transform:none}
+.space-photos:has(img[hidden]){grid-template-columns:1fr;padding:0}
+.space-photos:has(img[hidden]) img:not([hidden]){grid-area:auto;margin-top:0;aspect-ratio:4/4.3;max-height:560px}
 .space-layout:has(.space-photos img:first-child[hidden]+img[hidden]){grid-template-columns:1fr}
 .space-photos:has(img:first-child[hidden]+img[hidden]){display:none}
 
@@ -151,7 +157,7 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  .hero>img:not([hidden]){animation:portrait-enter .92s .12s cubic-bezier(.22,1,.36,1) both}
  .motion-enter{animation:editorial-enter .72s var(--motion-delay,0ms) cubic-bezier(.22,1,.36,1) both}
  .motion-enter.motion-title{animation-name:editorial-title}
- .motion-enter.motion-photo{animation-name:editorial-photo;animation-duration:.95s}
+ .motion-enter.motion-photo{animation-name:editorial-photo;animation-duration:.95s;animation-fill-mode:backwards}
  .motion-enter.motion-step{animation-name:editorial-step;animation-duration:.64s}
  .faq-items details[open] p{animation:faq-enter .25s ease-out both}
  .pill:active,.whatsapp-float:active{transform:scale(.97)}
@@ -211,9 +217,12 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  .method-label{font-size:clamp(64px,17vw,87px)}
  .method-grid>img{max-height:380px;border-radius:55px 12px 55px 12px;outline-offset:4px}
  .split>img{max-height:430px;outline-offset:4px}
- .space-photos{gap:12px;padding-bottom:16px}
- .space-photos img{border-radius:38px 10px 38px 10px}
- .space-photos img+img{transform:translateY(12px)}
+ #espaco .space-layout{grid-template-columns:minmax(0,1fr);gap:30px}
+ .space-copy h2{max-width:none}
+ .space-photos{padding:12px 0 12px 8px}
+ .space-photos::before{border-radius:65px 12px 48px 12px}
+ .space-photos img{border-width:4px;border-radius:50px 12px 35px 12px}
+ .space-photos img+img{border-radius:32px 10px 26px 10px}
  .faq-items details{padding-inline:14px}
  .faq-items summary{padding-block:15px}
  .social-visual{width:min(100%,260px)}
