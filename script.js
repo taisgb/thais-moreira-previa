@@ -56,7 +56,7 @@
     }
   }
   if (!motion.matches && 'IntersectionObserver' in window) {
-    const targets = document.querySelectorAll('.reveal, #cuidados > h2, #metodo .method-copy, #metodo img, #sobre > *, #espaco .space-copy, #espaco .space-photos, #faq .faq-layout > *, #redes .social-layout > *, #contato .contact-inner');
+    const targets = document.querySelectorAll('.reveal, #cuidados > h2, #metodo .method-copy, #metodo .method-panel, #sobre > *, #espaco .space-copy, #espaco .space-photos, #faq .faq-layout > *, #redes .social-layout > *, #contato .contact-inner');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;

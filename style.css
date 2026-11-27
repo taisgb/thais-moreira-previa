@@ -212,3 +212,25 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  .pill:hover,.services article:hover,.whatsapp-float:hover{transform:none}
  .space-photos img:hover{translate:none}
 }
+
+/* Magras Magras: composição editorial independente de fotografia. */
+#metodo{overflow:hidden}
+#metodo .method-grid{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:center;gap:clamp(32px,6vw,85px)}
+#metodo .method-copy{max-width:580px}
+#metodo .method-label{font-size:clamp(60px,6.3vw,96px);line-height:1;letter-spacing:-.055em}
+#metodo .method-copy>p:not(.eyebrow){max-width:50ch}
+#metodo .method-panel{position:relative;isolation:isolate;overflow:hidden;padding:clamp(28px,4vw,55px);border:1px solid #e7d4bb55;border-radius:100px 18px 100px 18px;background:radial-gradient(ellipse at 90% 5%,#a46d493d,transparent 70%),linear-gradient(145deg,#674431,#422b22);box-shadow:0 25px 50px #170d0840}
+#metodo .method-mark{position:absolute;z-index:-1;right:-.07em;bottom:-.22em;font:500 clamp(150px,22vw,350px)/1 var(--display);letter-spacing:-.18em;color:#e7d4bb0a;pointer-events:none;user-select:none}
+#metodo .method-panel h3{font-size:clamp(29px,3.2vw,45px);line-height:1.15;max-width:12em;color:var(--cream)}
+#metodo .method-panel h3 em{color:#e7c39e;font-weight:500}
+#metodo .method-points{margin-top:22px}
+#metodo .method-points span{display:flex;align-items:center;gap:14px;padding:17px 0;border-bottom:1px solid #e7d4bb35;font-size:15px}
+#metodo .method-points span:last-child{border-bottom:0}
+#metodo .method-points span::before{display:none}
+#metodo .method-points b{flex:0 0 34px;font:500 23px/1 var(--display);color:#e7c39e}
+@media(max-width:700px){
+ #metodo .method-grid{grid-template-columns:minmax(0,1fr);gap:30px}
+ #metodo .method-label{font-size:clamp(57px,16vw,80px)}
+ #metodo .method-panel{border-radius:55px 12px 55px 12px;padding:26px}
+ #metodo .method-points span{font-size:14px;padding:14px 0}
+}
