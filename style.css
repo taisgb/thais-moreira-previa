@@ -45,20 +45,20 @@ nav .pill{min-height:42px;padding:10px 22px}
 #menu{display:none}
 
 /* Hero: organic arch and portrait, anchored to the lower edge */
-.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);align-items:center;gap:clamp(24px,4vw,64px);min-height:620px;padding:56px var(--gutter) 66px;color:var(--cream);background:radial-gradient(ellipse at 75% 45%,#b0785070,transparent 43%),linear-gradient(125deg,#291a15,#513326 68%,#38231c);overflow:hidden}
-.hero>div{position:relative;z-index:2;max-width:610px;padding-bottom:24px}
-.hero h1{margin-bottom:22px}
-.hero h1 em{display:block}
+.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(30px,4vw,64px);min-height:620px;padding:42px var(--gutter) 0;color:var(--cream);background:radial-gradient(ellipse at 75% 45%,#b0785070,transparent 43%),linear-gradient(125deg,#291a15,#513326 68%,#38231c);overflow:hidden}
+.hero>div{position:relative;z-index:2;max-width:100%;min-width:0;padding:35px 0 94px}
+ .hero h1{font-size:clamp(44px,4.3vw,72px);margin-bottom:22px;overflow-wrap:normal;text-wrap:balance}
+ .hero h1 em{display:block;font-size:.92em;line-height:1.12;text-wrap:balance}
 .hero p:not(.eyebrow){max-width:48ch;color:#f0e4d6}
 .hero .pill{margin-top:28px}
-.hero::before{content:"";position:absolute;z-index:-1;right:calc(var(--gutter) + 12px);top:6%;bottom:12%;width:37%;border-radius:49% 49% 16% 16%;border:1px solid #e7d4bb60;background:radial-gradient(ellipse at 55% 43%,#c58e6060,transparent 70%);box-shadow:0 0 0 12px #e7d4bb08}
-.hero>img{align-self:end;justify-self:center;width:100%;height:clamp(460px,43vw,620px);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 16px 18px #160b083b)}
-.hero:has(>img[hidden]){grid-template-columns:1fr;min-height:460px}
+.hero::before{content:"";position:absolute;z-index:-1;right:calc(var(--gutter) + 4px);top:7%;bottom:8%;width:min(34%,570px);border-radius:49% 49% 16% 16%;border:1px solid #e7d4bb60;background:radial-gradient(ellipse at 55% 43%,#c58e6060,transparent 70%);box-shadow:0 0 0 12px #e7d4bb08}
+.hero>img{align-self:end;justify-self:center;width:100%;height:clamp(490px,46vw,680px);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 18px #160b0830)}
+.hero:has(>img[hidden]){grid-template-columns:1fr;min-height:460px;padding-bottom:72px}
 .hero:has(>img[hidden])::before{display:none}
 
 /* Wave overlaps hero and following section, without creating a blank gap */
-.ribbon{position:relative;z-index:5;width:100%;height:112px;margin:-76px 0 -36px;overflow:hidden;pointer-events:none}
-.ribbon svg{display:block;width:100%;min-width:940px;height:112px;max-width:none;filter:drop-shadow(0 5px 4px #291a1533)}
+.ribbon{position:relative;z-index:5;width:100%;height:128px;margin:-93px 0 -35px;overflow:hidden;pointer-events:none}
+.ribbon svg{display:block;width:100%;min-width:940px;height:128px;max-width:none;filter:drop-shadow(0 5px 4px #291a1533)}
 .ribbon text{font-family:var(--body);font-weight:600;white-space:pre}
 
 /* Treatments */
@@ -173,15 +173,15 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  h1{font-size:clamp(42px,10.8vw,61px)}
  h2{font-size:clamp(34px,8.8vw,47px);margin-bottom:16px}
  .eyebrow{font-size:10px;letter-spacing:.13em}
- .hero{grid-template-columns:minmax(0,1fr);gap:10px;min-height:0;padding-top:46px;padding-bottom:45px}
- .hero>div{padding-bottom:0}
- .hero h1{margin-bottom:18px}
+ .hero{grid-template-columns:minmax(0,1fr);gap:10px;min-height:0;padding-top:46px;padding-bottom:0}
+  .hero>div{padding:0 0 12px}
+  .hero h1{font-size:clamp(40px,10vw,56px);margin-bottom:18px}
  .hero .pill{margin-top:22px}
- .hero::before{top:auto;bottom:46px;height:clamp(295px,87vw,415px);width:72%;right:14%;border-radius:49% 49% 15% 15%}
+ .hero::before{top:auto;bottom:26px;height:clamp(295px,87vw,415px);width:72%;right:14%;border-radius:49% 49% 15% 15%}
  .hero>img{width:100%;height:clamp(320px,103vw,450px);object-fit:contain;object-position:center bottom}
  .hero:has(>img[hidden]){min-height:0;padding-bottom:82px}
- .ribbon{height:84px;margin-top:-54px;margin-bottom:-30px}
- .ribbon svg{height:84px;min-width:760px;width:190%}
+ .ribbon{height:100px;margin-top:-73px;margin-bottom:-27px}
+ .ribbon svg{height:100px;min-width:760px;width:190%}
  #cuidados{padding-top:62px}
  .services{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:25px}
  .services article{min-height:0;padding:23px 22px}
