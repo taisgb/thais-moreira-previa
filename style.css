@@ -9,7 +9,7 @@
   --shadow:0 18px 45px #38231c20;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:clip}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:92px}
 body{margin:0;min-width:0;background:var(--cream);color:var(--ink);font:400 16px/1.7 var(--body);overflow-wrap:break-word}
 main{overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
@@ -34,7 +34,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .dark h2 em,.hero h1 em{color:#e7c39e}
 
 /* Navigation */
-header{position:relative;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px var(--gutter);background:#36221b;color:var(--cream);border-bottom:1px solid #e7d4bb22}
+header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px var(--gutter);background:#36221bf5;color:var(--cream);border-bottom:1px solid #e7d4bb22;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .brand{display:flex;align-items:center;gap:12px;min-width:0;font:500 clamp(19px,2vw,27px)/1.15 var(--display);letter-spacing:-.025em}
 .brand img{flex:0 0 62px;width:62px;height:62px;object-fit:contain;background:var(--cream);padding:5px;border-radius:50%}
 .brand small{display:block;margin-top:5px;font:600 9px/1.4 var(--body);letter-spacing:.13em}
@@ -195,7 +195,7 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  :root{--gutter:6%}
  #menu{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid #e7d4bb66;border-radius:50%;background:transparent;color:var(--cream);font-size:22px}
  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:15px var(--gutter) 24px;background:var(--coffee);box-shadow:0 14px 25px #291a1533}
- nav.open{display:flex}
+ nav.open{display:flex;max-height:calc(100dvh - 92px);overflow-y:auto}
  nav>a:not(.pill){padding:11px 0;border-bottom:1px solid #e7d4bb22}
  nav .pill{align-self:flex-start;margin-top:15px}
  .hero{min-height:530px}
@@ -207,6 +207,7 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
 @media(max-width:700px){
  :root{--section:58px;--gutter:6%}
  body{font-size:15px}
+ html{scroll-padding-top:74px}
  header{padding-block:12px;gap:10px}
  .brand{font-size:21px;gap:9px}
  .brand img{width:47px;height:47px;flex-basis:47px;padding:3px}
