@@ -45,7 +45,21 @@ nav .pill{min-height:42px;padding:10px 22px}
 #menu{display:none}
 
 /* Hero: organic arch and portrait, anchored to the lower edge */
-.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(30px,4vw,64px);min-height:620px;padding:42px var(--gutter) 0;color:var(--cream);background:radial-gradient(ellipse at 75% 45%,#b0785070,transparent 43%),linear-gradient(125deg,#291a15,#513326 68%,#38231c);overflow:hidden}
+.hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(30px,4vw,64px);min-height:620px;padding:42px var(--gutter) 0;color:var(--cream);background:radial-gradient(ellipse at 12% 44%,#291a15 0%,#291a15de 25%,#38231c90 47%,transparent 72%),radial-gradient(ellipse at 81% 55%,#d09b6b78 0%,#b97e4945 30%,transparent 62%),linear-gradient(177deg,#21140f 0%,#38231c 27%,#71472f 57%,#b78050 79%,#dfc4a4 93%,#faf7f2 100%);overflow:hidden}
+/* Atmospheric light: decorative background only, behind the original composition. */
+.hero::after{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.55;background:
+radial-gradient(circle at 8% 15%,#f7dfbf88 0 1px,transparent 2.5px),
+radial-gradient(circle at 19% 8%,#e9c29455 0 1px,transparent 2px),
+radial-gradient(circle at 34% 23%,#ffe5c477 0 1px,transparent 3px),
+radial-gradient(circle at 46% 12%,#e9c29488 0 1px,transparent 2.5px),
+radial-gradient(circle at 57% 30%,#ffe5c455 0 1px,transparent 3px),
+radial-gradient(circle at 64% 9%,#e9c29477 0 1px,transparent 2px),
+radial-gradient(circle at 72% 21%,#ffe5c466 0 1px,transparent 2.5px),
+radial-gradient(circle at 86% 12%,#f7dfbf88 0 1px,transparent 3px),
+radial-gradient(circle at 94% 33%,#e9c29477 0 1px,transparent 2.5px),
+radial-gradient(circle at 91% 48%,#ffe5c477 0 1px,transparent 3px),
+radial-gradient(circle at 52% 6%,#f7dfbf55 0 1px,transparent 2px),
+radial-gradient(circle at 98% 15%,#f7dfbf55 0 1px,transparent 2px)}
 .hero>div{position:relative;z-index:2;max-width:100%;min-width:0;padding:35px 0 94px}
  .hero h1{font-size:clamp(44px,4.3vw,72px);margin-bottom:22px;overflow-wrap:normal;text-wrap:balance}
  .hero h1 em{display:block;font-size:.92em;line-height:1.12;text-wrap:balance}
@@ -266,3 +280,7 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
 }
 
 @media(prefers-reduced-motion:reduce){.hero-title-line{overflow:visible}.pill{translate:none!important}}
+
+@media(max-width:700px){
+ .hero{background:radial-gradient(ellipse at 25% 18%,#291a15aa,transparent 60%),radial-gradient(ellipse at 80% 72%,#d09b6b80,transparent 55%),linear-gradient(176deg,#21140f 0%,#38231c 40%,#71472f 65%,#bf8956 86%,#ead8c1 97%,#faf7f2 100%)}
+}
