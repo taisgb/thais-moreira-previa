@@ -131,22 +131,43 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
 .whatsapp-float svg{width:30px;height:30px;fill:currentColor}
 
 /* Motion */
-@keyframes editorial-enter{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
+/* Motion: effects kept separate from layout and pointer states. */
+@keyframes editorial-enter{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+@keyframes editorial-title{from{clip-path:inset(0 0 100% 0);translate:0 14px;opacity:.35}to{clip-path:inset(0 -8px -18px -8px);translate:0 0;opacity:1}}
+@keyframes editorial-photo{from{clip-path:inset(12% 4% 0 4% round 30% 30% 0 0);opacity:.15;scale:1.035}to{clip-path:inset(0);opacity:1;scale:1}}
+@keyframes portrait-enter{from{opacity:0;translate:0 22px}to{opacity:1;translate:0 0}}
 @keyframes faq-enter{from{opacity:0;translate:0 -5px}to{opacity:1;translate:0 0}}
+@keyframes editorial-step{from{opacity:.15;translate:-12px 0}to{opacity:1;translate:0 0}}
+@keyframes editorial-mark{from{translate:0 18px;rotate:-4deg}to{translate:0 -18px;rotate:2deg}}
+@keyframes editorial-photo-depth{from{translate:0 9px}to{translate:0 -9px}}
+.hero-title-line{display:block;overflow:clip;overflow-clip-margin:18px}
+.hero-title-line>span{display:block}
 @media(prefers-reduced-motion:no-preference){
- .hero>div{animation:editorial-enter .65s ease-out both}
- .hero>img:not([hidden]){animation:editorial-enter .8s .1s ease-out both}
- .motion-enter{animation:editorial-enter .6s ease-out both}
- .services article.motion-enter:nth-child(3n+2){animation-delay:.07s}
- .services article.motion-enter:nth-child(3n){animation-delay:.14s}
+ .hero .eyebrow{animation:editorial-enter .55s cubic-bezier(.22,1,.36,1) both}
+ .hero-title-line>span{animation:editorial-title .8s .06s cubic-bezier(.22,1,.36,1) both}
+ .hero-title-line:nth-child(2)>span{animation-delay:.18s}
+ .hero>div>p:not(.eyebrow){animation:editorial-enter .72s .2s cubic-bezier(.22,1,.36,1) both}
+ .hero>div>.pill{animation:editorial-enter .7s .3s cubic-bezier(.22,1,.36,1) both}
+ .hero>img:not([hidden]){animation:portrait-enter .92s .12s cubic-bezier(.22,1,.36,1) both}
+ .motion-enter{animation:editorial-enter .72s var(--motion-delay,0ms) cubic-bezier(.22,1,.36,1) both}
+ .motion-enter.motion-title{animation-name:editorial-title}
+ .motion-enter.motion-photo{animation-name:editorial-photo;animation-duration:.95s}
+ .motion-enter.motion-step{animation-name:editorial-step;animation-duration:.64s}
  .faq-items details[open] p{animation:faq-enter .25s ease-out both}
  .pill:active,.whatsapp-float:active{transform:scale(.97)}
 }
-@media(hover:hover) and (pointer:fine){
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .pill{translate:var(--magnet-x,0px) var(--magnet-y,0px);transition:transform .25s,translate .2s cubic-bezier(.22,1,.36,1),box-shadow .25s}
  .pill:hover{transform:translateY(-3px);box-shadow:0 12px 24px #291a1538}
  .services article:hover{transform:translateY(-5px);box-shadow:0 20px 42px #38231c20}
  .space-photos img:hover{translate:0 -5px;box-shadow:0 24px 42px #38231c40}
  .whatsapp-float:hover{transform:translateY(-3px);background:#08783e}
+}
+@supports(animation-timeline:view()){
+ @media(min-width:951px) and (prefers-reduced-motion:no-preference){
+  #metodo .method-mark{animation:editorial-mark linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+  #espaco .space-photos{animation:editorial-photo-depth linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+ }
 }
 
 /* Tablet */
@@ -198,7 +219,7 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  .social-visual{width:min(100%,260px)}
  .social-emblem{padding:24px}
  .whatsapp-float{width:52px;height:52px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom))}
- .services article.motion-enter:nth-child(n){animation-delay:0s}
+ .services article.motion-enter{animation-delay:0s}
 }
 @media(max-width:360px){
  .brand{font-size:18px}
@@ -234,3 +255,5 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  #metodo .method-panel{border-radius:55px 12px 55px 12px;padding:26px}
  #metodo .method-points span{font-size:14px;padding:14px 0}
 }
+
+@media(prefers-reduced-motion:reduce){.hero-title-line{overflow:visible}.pill{translate:none!important}}
