@@ -57,8 +57,8 @@ nav .pill{min-height:42px;padding:10px 22px}
 .hero:has(>img[hidden])::before{display:none}
 
 /* Wave overlaps hero and following section, without creating a blank gap */
-.ribbon{position:relative;z-index:5;width:100%;height:128px;margin:-93px 0 -35px;overflow:hidden;pointer-events:none}
-.ribbon svg{display:block;width:100%;min-width:940px;height:128px;max-width:none;filter:drop-shadow(0 5px 4px #291a1533)}
+.ribbon{--ribbon-height:clamp(108px,11.111vw,200px);position:relative;z-index:5;width:100%;height:var(--ribbon-height);margin:calc(var(--ribbon-height) * -.73) 0 calc(var(--ribbon-height) * -.27);overflow:hidden;pointer-events:none}
+.ribbon svg{display:block;width:100%;height:100%;filter:drop-shadow(0 5px 4px #291a1533)}
 .ribbon text{font-family:var(--body);font-weight:600;white-space:pre}
 
 /* Treatments */
@@ -180,8 +180,8 @@ footer small{display:block;margin-top:5px;color:#e7d4bb}
  .hero::before{top:auto;bottom:26px;height:clamp(295px,87vw,415px);width:72%;right:14%;border-radius:49% 49% 15% 15%}
  .hero>img{width:100%;height:clamp(320px,103vw,450px);object-fit:contain;object-position:center bottom}
  .hero:has(>img[hidden]){min-height:0;padding-bottom:82px}
- .ribbon{height:100px;margin-top:-73px;margin-bottom:-27px}
- .ribbon svg{height:100px;min-width:760px;width:190%}
+  .ribbon{--ribbon-height:108px}
+  .ribbon svg{width:100%;height:100%}
  #cuidados{padding-top:62px}
  .services{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:25px}
  .services article{min-height:0;padding:23px 22px}
